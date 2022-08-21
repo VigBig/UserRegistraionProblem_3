@@ -52,6 +52,39 @@ public class UserRegistration {
         }
     }
 
+    public void mobileNumber(String mobileNumber) {
+
+        String MobileNumberPattern = "^(91-)?[0-9]{10}$";
+
+        Pattern pattern3 = Pattern.compile(MobileNumberPattern);
+        Matcher matcher3 = pattern3.matcher(mobileNumber);
+        Boolean result3 = matcher3.matches();
+
+        if (result3 == true) {
+            System.out.println("Mobile number is valid");
+        } else {
+            System.out.println("Mobile number is not valid");
+        }
+    }
+
+    public void passwordRule(String password){
+
+        String PasswordPattern="^[a-zA-Z0-9~!@#$]{8,}$";
+
+        Pattern pattern4=Pattern.compile(PasswordPattern);
+        Matcher matcher4=pattern4.matcher(password);
+        Boolean result4=matcher4.matches();
+
+        if(result4==true){
+            System.out.println("Password is valid");
+        }else{
+            System.out.println("Invaild, minimum 8 characters required.");
+        }
+
+    }
+
+
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -69,5 +102,14 @@ public class UserRegistration {
         System.out.println("Enter your Email:");
         String email = scanner.next();
         ur.email(email);
+
+        System.out.println("Enter your Mobile number:");
+        String mobileNumber = scanner.next();
+        ur.mobileNumber(mobileNumber);
+
+        System.out.println("Enter your Password:");
+        String password=scanner.next();
+        ur.passwordRule(password);
+
     }
 }
