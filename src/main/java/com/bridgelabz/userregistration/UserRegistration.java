@@ -69,7 +69,7 @@ public class UserRegistration {
 
     public void passwordRule(String password){
 
-        String PasswordPattern="^(?=.*[0-9])(?=.*[A-Z])[a-zA-Z0-9@#$%^&+]{8,}$";
+        String PasswordPattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[~!@#$%^&*()<>:{},.;'])[A-Za-z0-9~!@#$%^&*()<>:{},.;']{8,}$";
 
         Pattern pattern4=Pattern.compile(PasswordPattern);
         Matcher matcher4=pattern4.matcher(password);
@@ -78,7 +78,7 @@ public class UserRegistration {
         if(result4==true){
             System.out.println("Password is valid");
         }else{
-            System.out.println("Invaild password,minimum 8 characters required with atleast 1 of them being upper case and atleast 1 of them being a number.");
+            System.out.println("Invaild password,minimum 8 characters required with atleast 1 of them being upper case and atleast 1 of them being a number and exactly 1 of them being a special character.");
         }
 
     }
