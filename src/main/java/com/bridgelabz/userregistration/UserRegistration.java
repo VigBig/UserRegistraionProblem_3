@@ -109,6 +109,7 @@ public class UserRegistration {
 
         System.out.println("Enter your Password:");
         String password=scanner.next();
+
         ur.passwordRule(password);
 
     }
