@@ -24,14 +24,32 @@ public class UserRegistration {
             System.out.println("First Name is not valid.");
     }
 
+    public void lastName(String lastName) {
+
+        String lastNamePattern = "^[A-Z]{1}[a-z]{2,}$";
+
+        Pattern pattern = Pattern.compile(lastNamePattern);
+        Matcher matcher = pattern.matcher(lastName);
+        boolean result = matcher.matches();
+
+        if(result == true)
+            System.out.println("Last Name is valid.");
+        else
+            System.out.println("Last Name is not valid.");
+    }
+
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Welcome to the User Registration Problem:");
-
+        System.out.println("Welcome to User Registration Problem:");
         UserRegistration ur = new UserRegistration();
+
         System.out.println("Enter First Name:");
         String firstName = scanner.next();
         ur.firstName(firstName);
 
+        System.out.println("Enter Last Name:");
+        String lastName = scanner.next();
+        ur.lastName(lastName);
     }
 }
