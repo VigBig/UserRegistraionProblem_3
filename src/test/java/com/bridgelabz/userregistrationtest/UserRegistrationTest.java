@@ -1,4 +1,4 @@
-package com.bridgelabz.userregistration.com.bridgelabz.userregistrationtest;
+package com.bridgelabz.userregistrationtest;
 
 import com.bridgelabz.userregistration.UserRegistration;
 import junit.framework.TestCase;
