@@ -1,6 +1,8 @@
 package com.bridgelabz.userregistrationtest;
 
+import com.bridgelabz.userregistration.CustomException;
 import com.bridgelabz.userregistration.UserRegistration;
+import com.bridgelabz.userregistration.UserRegistrationException;
 import junit.framework.TestCase;
 import org.junit.Test;
 
@@ -9,72 +11,72 @@ import static org.junit.Assert.assertEquals;
 public class UserRegistrationTest {
 
     @Test
-    public void testValidFirstName() {
-        UserRegistration userRegistration=new UserRegistration();
-        boolean result=userRegistration.firstName("Vighnesh");
+    public void testValidFirstName() throws CustomException {
+        UserRegistrationException userRegistrationException=new UserRegistrationException();
+        boolean result=userRegistrationException.firstNameException("Vighnesh");
         assertEquals("Valid First Name test pass",true,result);
     }
 
     @Test
-    public void testInvalidFirstName() {
-        UserRegistration userRegistration=new UserRegistration();
-        boolean result=userRegistration.firstName("vIGHNESH");
+    public void testInvalidFirstName()  throws CustomException {
+        UserRegistrationException userRegistrationException=new UserRegistrationException();
+        boolean result=userRegistrationException.firstNameException("vIGHNESH");
         assertEquals("Invalid First Name test pass",false,result);
     }
 
     @Test
-    public void testValidLastName() {
-        UserRegistration userRegistration=new UserRegistration();
-        boolean result=userRegistration.lastName("Bilgi");
+    public void testValidLastName() throws CustomException {
+        UserRegistrationException userRegistrationException=new UserRegistrationException();
+        boolean result=userRegistrationException.lastNameException("Bilgi");
         assertEquals("Valid Last Name test pass",true,result);
     }
 
     @Test
-    public void testInvalidLastName() {
-        UserRegistration userRegistration=new UserRegistration();
-        boolean result=userRegistration.lastName("bILGI");
+    public void testInvalidLastName()  throws CustomException {
+        UserRegistrationException userRegistrationException=new UserRegistrationException();
+        boolean result=userRegistrationException.lastNameException("bILGI");
         assertEquals("Invlaid Last Name test pass",false,result);
     }
 
     @Test
-    public void testValidEmail() {
-        UserRegistration userRegistration=new UserRegistration();
-        boolean result=userRegistration.email("vighnesh@gmail.com");
+    public void testValidEmail() throws CustomException {
+        UserRegistrationException userRegistrationException=new UserRegistrationException();
+        boolean result=userRegistrationException.emailException("vighnesh@gmail.com");
         assertEquals("Valid Email test pass",true,result);
     }
 
     @Test
-    public void testInvlaidEmail() {
-        UserRegistration userRegistration=new UserRegistration();
-        boolean result=userRegistration.email("vighnesh.gmail.com");
+    public void testInvalidEmail() throws CustomException {
+        UserRegistrationException userRegistrationException=new UserRegistrationException();
+        boolean result=userRegistrationException.emailException("vighnesh.gmail.com");
         assertEquals("Invlaid Email test pass",false,result);
     }
 
     @Test
-    public void testValidMobileNumber() {
-        UserRegistration userRegistration=new UserRegistration();
-        boolean result=userRegistration.mobileNumber("9049480396");
+    public void testValidMobileNumber() throws CustomException {
+        UserRegistrationException userRegistrationException=new UserRegistrationException();
+        boolean result=userRegistrationException.mobileNumberException("9049480396");
         assertEquals("Valid Mobile Number test pass",true,result);
     }
 
     @Test
-    public void testInvlaidMobileNumber() {
-        UserRegistration userRegistration=new UserRegistration();
-        boolean result=userRegistration.mobileNumber("12345");
+    public void testInvlaidMobileNumber()  throws CustomException {
+        UserRegistrationException userRegistrationException=new UserRegistrationException();
+        boolean result=userRegistrationException.mobileNumberException("12345");
         assertEquals("Invalid Mobile Number test pass",false,result);
     }
 
     @Test
-    public void testValidPassword() {
-        UserRegistration userRegistration=new UserRegistration();
-        boolean result=userRegistration.passwordRule("abcDEF123!@#");
+    public void testValidPassword()  throws CustomException {
+        UserRegistrationException userRegistrationException=new UserRegistrationException();
+        boolean result=userRegistrationException.passwordRuleException("abcDEF123!@#");
         assertEquals("Valid Password test pass",true,result);
     }
 
     @Test
-    public void testInvalidPassword() {
-        UserRegistration userRegistration=new UserRegistration();
-        boolean result=userRegistration.passwordRule("aD1#");
+    public void testInvalidPassword()  throws CustomException {
+        UserRegistrationException userRegistrationException=new UserRegistrationException();
+        boolean result=userRegistrationException.passwordRuleException("aD1#");
         assertEquals("Invalid Password test pass",false,result);
     }
 }

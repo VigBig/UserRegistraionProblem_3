@@ -1,6 +1,8 @@
 package com.bridgelabz.userregistrationtest;
 
+import com.bridgelabz.userregistration.CustomException;
 import com.bridgelabz.userregistration.UserRegistration;
+import com.bridgelabz.userregistration.UserRegistrationException;
 import junit.framework.TestCase;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -49,9 +51,9 @@ public class EmailSampleValidationTest {
     }
 
     @Test
-    public void testValidAndInvalidEmailSamples() {
-        UserRegistration userRegistration = new UserRegistration();
-        boolean result = userRegistration.email(this.emailSample);
+    public void testValidAndInvalidEmailSamples()  throws CustomException {
+        UserRegistrationException userRegistrationException=new UserRegistrationException();
+        boolean result=userRegistrationException.emailException(this.emailSample);
         assertEquals("Email", this.expectedResult, result);
     }
 
